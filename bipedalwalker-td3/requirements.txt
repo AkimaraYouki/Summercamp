@@ -1,0 +1,8 @@
+torch>=2.0
+gymnasium[box2d]>=0.28
+numpy
+matplotlib
+pygame
+imageio
+imageio-ffmpeg
+tensorboard
