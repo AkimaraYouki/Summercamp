@@ -119,7 +119,7 @@ files.download("/content/demo_videos/g2-si-speed-s201_ep1.mp4")
 
 모델별 상이값(frame_skip, fall_penalty, activation, speed shaping 등)은 각 모델 폴더의 `run_train.sh`, `README.md`에 기록.
 
-### 로컬에서 실행할 경우
+### 로컬에서 채크포인트를 실행할 경우
 
 pygame 창이 화면에 그대로 뜨므로 가상 디스플레이가 필요 없다.
 
