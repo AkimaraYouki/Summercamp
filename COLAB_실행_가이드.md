@@ -83,6 +83,17 @@ Video("/content/demo_videos/g2-si-speed-s201_ep1.mp4", embed=True)
 
 **기준**: 매 에피소드 `Episode [N/2000] Reward: ... | 최근 100개 평균: ...`가 출력되고, 최근 100개 평균이 300을 넘으면 `환경을 풀었습니다!`가 뜨고 종료된다. 시간이 오래 걸리는 게 정상이라 끝까지 안 돌려도, 로그의 "최근 100개 평균"이 점점 올라가는 추세만 확인해도 재현 검증은 충분하다.
 
+### TensorBoard로 학습 곡선 실시간 확인
+
+학습 스크립트가 콘솔에 찍어주는 `TensorBoard: tensorboard/... (tensorboard --logdir tensorboard)` 힌트 그대로, 같은 폴더(`models/model1_g2-si-speed-s201`)에서 Colab 매직 커맨드로 띄울 수 있다. 학습 셀을 실행한 뒤 별도 셀에서:
+
+```python
+%load_ext tensorboard
+%tensorboard --logdir tensorboard
+```
+
+**기준**: TensorBoard 대시보드가 셀 출력에 인라인으로 뜨고, `reward`·`loss` 등의 스칼라 그래프가 학습이 진행될수록 갱신되면 정상이다.
+
 ## 6) 100ep 고정시드 재평가 (해결률·낙상률 재현)
 
 ```bash
